@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 import HomePage from '../pages/Home.vue';
 import AboutPage from '../pages/About.vue';
 import ContactPage from '../pages/Contact.vue';
+import ProductPage from '../components/Product.vue';
 const routes = [
   {
     path: '', component: HomePage,
@@ -14,6 +15,9 @@ const routes = [
   },
   {
     path: '/contact', component: ContactPage
+  },
+  {
+    path: '/product/:id', component: ProductPage
   }
 ]
 
