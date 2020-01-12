@@ -19,13 +19,22 @@
         mollitia, omnis cum dolor impedit facilis ipsum inventore, recusandae,
         laudantium nobis quos rem fuga quasi!
       </p>
+      <div class="wapper__price">
       <div class="wapper__btn">
         <button class="less"> - </button>
         <span class="value">1</span>
         <button class="more"> + </button>
       </div>
-      <span>preço: 15</span>
-      <button>Adicionar</button> 
+      <span class='price'>
+        <span class="price__label">
+          Preço:
+        </span>
+        <span class="price__value">
+          R$15
+        </span>
+      </span>
+      </div>
+      <button class="btn__addcart">Adicionar no carrinho</button> 
     </div>
     <!-- https://dribbble.com/shots/5059613-Web-Food-Delivery-Platform-Food-Search/attachments -->
   </div>
@@ -38,20 +47,20 @@ export default {
 <style lang="stylus">
 font-color = #3b3a55;
 b-width = 100%;
+font = 'Roboto', sans-serif;
 .wapper__product{
   width: b-width;
   height 100vh;
   padding: 20px;
   display: flex;
   background: #fcfbfe;
-  // background : #acadc4;
   justify-content: space-between;
   .product__img {
     width: b-width;
     display flex;
     justify-content: center;
     .container__img {
-      width: b-width;
+      width: 75%;
       img {
         width: b-width;
         max-width: 100%;
@@ -61,10 +70,12 @@ b-width = 100%;
     }
   }
   .wapper__product__info {
-    padding-left: 20px;
+    display: flex;
+    flex-direction : column;
     padding-right : 20px;
       .product__info__title {
-      font-size: 3rem;
+      display : flex;
+      font-size: 2.3rem;
       line-height 16px;
       font-weight: 700;
       color: font-color;
@@ -75,8 +86,37 @@ b-width = 100%;
       font-font-weight :100;
     }
     .product__info__description {
-      font-size: 1rem;
+      font-size: .75rem;
+       width: 73%;
+      font-family: font;
       color: font-color;
+    }
+    & > .btn__addcart {
+      font-family: font;
+      cursor: pointer;
+      text-transform : uppercase;
+      color: #fff;
+      width: 330px;
+      margin-top : 40px;
+      padding : 15px 15px;
+      border-radius: 20px;
+      border : none;
+      background-image: linear-gradient(-90deg, #e03c72, #6B70C8);
+    }
+  }
+  .wapper__price {
+    display : flex;
+    align-items : baseline;
+    align-content : center;
+    & > .price {
+      font-family : font;
+      color: font-color;
+      padding: 11px 20px 11px 20px;
+      border-radius: 20px
+      box-shadow: 0 0 9px 3px rgba(107, 112, 200, .2);
+      & > .price__value {
+        color : #e03c72;
+      }
     }
   }
   .wapper__btn {
@@ -85,8 +125,10 @@ b-width = 100%;
   justify-content: space-between;
   width: 150px;
   height: 40px;
+  margin-top : 40px;
+  margin-right :40px;
   border-radius: 20px;
-  box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 9px 3px rgba(107, 112, 200, .2)
 
   &  > .less {
     color: font-color;
@@ -114,8 +156,7 @@ b-width = 100%;
     border: none;
     font-size: 1rem;
     background: #fff;
-  }
-  
+  } 
   }
 }
 </style>
