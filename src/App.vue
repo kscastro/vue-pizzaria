@@ -14,7 +14,7 @@ export default {
   }
 }
 </script>
-
+//Usa o Styled Component para começar vai ter ajudar muito
 <style>
 #app, html, body {
   margin: 0 auto;
